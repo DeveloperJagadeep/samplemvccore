@@ -23,11 +23,13 @@ namespace samplemvccore.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.SubTitle = _configuration["SubTitle"];
             return View();
         }
 
         public IActionResult Privacy()
         {
+            
             return View();
         }
 
