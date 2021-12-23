@@ -38,7 +38,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'learnrg-webapp-stage'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -52,6 +52,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'learnrg-webapp'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A11C59E3139840A78AF8CF362DE72DBB }}
+          slot-name: 'learnrg-webapp-stage'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_45B7A9C927DB447E8A45AE62034B5EF9 }}
           package: .
